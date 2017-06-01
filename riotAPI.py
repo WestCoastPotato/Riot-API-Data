@@ -1,5 +1,5 @@
 import requests
-
+import json
 
 api_key = '?api_key=RGAPI-6e2191cb-c314-4c48-af62-cf09d3ac6e1f'
 
@@ -13,7 +13,6 @@ def getID(name):
 		return user_id
 	else:
 		print('Error code on get summ id:' + response.status_code)
-
 
 # Get the match list for the current summoner
 def getMatchList(summID):
@@ -40,19 +39,11 @@ def matchStatistics(matchlist):
 		data = getMatchData(matchlist[index]['matchId'])
 		print(data)
 
-# This is where the application script starts
-
-# User names for the people to be looked up
-userNames = ['JuiMin', 'kryowing', 'yugichode', 'undinie']
-
-for name in userNames:
-	userID = getID(name.lower())
-	print(name + ":" + str(userID))
-	matches = getMatchList(userID)
-	print(name + " games played: " + str(len(matches)))
-	#matchStatistics(matches)
-	print("")
-
-
-
-
+# Api call getting all the matches for the given ID
+def dumpMatchList(gameID, outputfile):
+	matches = getMatchList(gameID)
+	matchFile = open(outputfile, 'w')
+	# Truncate the file to delete current content
+	matchFile.truncate()
+	# Append the json contents to the file
+	json.dump(matches, matchFile)
