@@ -1,5 +1,7 @@
 import requests
 import json
+import time
+from pprint import pprint
 
 api_key = '?api_key=RGAPI-6e2191cb-c314-4c48-af62-cf09d3ac6e1f'
 
@@ -47,3 +49,27 @@ def dumpMatchList(gameID, outputfile):
 	matchFile.truncate()
 	# Append the json contents to the file
 	json.dump(matches, matchFile)
+
+# pprint(data)
+def eatALlMatches():
+    with open('matchlist_' + GAME_ID  + '.json') as data_file:
+        data = json.load(data_file)
+    count = 0
+    total = 0
+    allMatches = []
+    for obj in data:
+        # Call Api
+        print("Counting :", total, " Cycle: ", count, " Match ID: ", obj['matchId'])
+        allMatches.append(riotAPI.getMatchData(obj['matchId']))
+        count += 1
+        total += 1
+        if count == 9:
+            print("sleeping")
+            time.sleep(10)
+            count = 0
+
+    matchFile = open("matchdata_JuiMin.json", 'w')
+    # Truncate the file to delete current content
+    matchFile.truncate()
+    # Append the json contents to the file
+    json.dump(allMatches, matchFile)
