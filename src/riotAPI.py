@@ -3,7 +3,7 @@ import json
 import time
 from pprint import pprint
 
-api_key = '?api_key=RGAPI-6e2191cb-c314-4c48-af62-cf09d3ac6e1f'
+api_key = '?api_key=RGAPI-32427d93-3b0e-44b7-92c1-dfb25518c1c4'
 
 
 # Get the ID for the current person
@@ -14,7 +14,7 @@ def getID(name):
 		user_id = response.json()[name]['id']
 		return user_id
 	else:
-		print('Error code on get summ id:' + response.status_code)
+		print('Error code on get summ id:' + str(response.status_code))
 
 # Get the match list for the current summoner
 def getMatchList(summID):

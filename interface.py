@@ -16,6 +16,7 @@ user = 'JuiMin'
 
 # Saved IDs -- JuiMin
 GAME_ID = "25392256"
+NICK = "30882388"
 
 # Start the Analysis
 def analysis():
