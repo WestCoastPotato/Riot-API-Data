@@ -8,10 +8,11 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>RIOT API Project v0.0.1</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          This Project will aim to gather data about a specific user from the Riot API and provide meaningful
+          analytics surrounding their performance.
         </p>
       </div>
     );
