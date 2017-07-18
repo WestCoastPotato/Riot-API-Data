@@ -1,12 +1,6 @@
 language: node_js
 node_js:
   - "7"
-<<<<<<< HEAD
-=======
-branches:
-   only:
-      - master
->>>>>>> 093304bd4b473a68eaaeec102ea50e391472f5d8
 cache:
   directories:
     - "client/node_modules"
