@@ -3,7 +3,7 @@ node_js:
   - "7"
 branches:
    only:
-      - "master"
+      - master
 cache:
   directories:
     - "client/node_modules"
