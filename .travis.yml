@@ -5,7 +5,6 @@ cache:
   directories:
     - "src/client/node_modules"
 before_script:
-  - npm install
   - npm install --prefix server
   - npm install --prefix client
 script: npm run ci
