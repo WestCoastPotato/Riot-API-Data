@@ -3,12 +3,15 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Riot APi' });
+  res.send("GET request received");
 });
 
-/* GET to test page */
-router.get('/express', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/hello', function(req, res, next) {
+  res.send("GET request received for hello");
+});
+
+router.get('/there', function(req, res, next) {
+  res.send("GET request received for there");
 });
 
 module.exports = router;
