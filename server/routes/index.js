@@ -14,5 +14,4 @@ router.get('/there', function(req, res, next) {
   res.send("GET request received for there");
 });
 
-
 module.exports = router;

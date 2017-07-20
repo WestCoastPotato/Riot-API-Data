@@ -2,6 +2,14 @@
 var KEY = 'RGAPI-3dcb37b4-c1b9-4c8d-af30-8223d9256298';
 var url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/JuiMIn';
 
+var options = {
+	method: "GET",
+	credentials: "same-origin"
+}
+
+// Import whatwg-fetch
+var fetchModule = require('whatwg-fetch');
+
 // Check that the api responded with something that we need
 function status(response) {
 	if (response.status != 200) {
@@ -18,7 +26,7 @@ function json(response) {
 
 // Perform the HTTP request to the fetch API
 // Promises used for asynch tasking and error catching
-fetch(url)
+fetchModule.fetch(url, options)
 	.then(status)
 	.then(json)
 	.then(function(data) {
