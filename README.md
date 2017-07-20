@@ -2,8 +2,29 @@
 
 [![Build Status](https://travis-ci.org/WestCoastPotato/Riot-API-Data.svg?branch=master)](https://travis-ci.org/WestCoastPotato/Riot-API-Data)
 
+## Technology
+#### JavaScript
+- [React JS](https://facebook.github.io/react/)
+- [Express](https://expressjs.com/)
+- [NPM](https://www.npmjs.com/)
+#### Templating
+- [PUG](https://pugjs.org/api/getting-started.html)
+- [Stylus(http://stylus-lang.com/)]
+
 ## Description
 This project aims to find some use for the Riot API that we can't find elsewhere on the web
+
+The current desire is for the user to be able to input their screen name (summoner id?) and be able to see their
+entire history of ranked games. Hopefully there will be some way to get normal game data as well but for now we know
+how to do ranked games. The server will then either cache these games and allow the user to peruse based on various sorting
+method.
+
+## Future Plans
+Haven't thought of what sort of data analysis we can do yet. This should probably be in the form of some data vis.
+(could use some plotting library like D3).
+
+
+Data is taken from [Riot API](https://developer.riotgames.com/) V.3
 
 ## Current Topics to Explore
 - Looking at improvement over the course of all Ranked Games
