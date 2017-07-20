@@ -8,7 +8,7 @@
 - [Express](https://expressjs.com/)
 - [NPM](https://www.npmjs.com/)
 #### Templating
-- [PUG](https://pugjs.org/api/getting-started.html)
+- [PUG/Jade](https://pugjs.org/api/getting-started.html)
 - [Stylus](http://stylus-lang.com/)
 
 ## Description
