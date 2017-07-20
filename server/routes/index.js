@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Riot APi' });
 });
 
+/* GET to test page */
+router.get('/express', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
 module.exports = router;
