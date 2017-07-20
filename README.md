@@ -19,16 +19,13 @@ entire history of ranked games. Hopefully there will be some way to get normal g
 how to do ranked games. The server will then either cache these games and allow the user to peruse based on various sorting
 method.
 
-## Future Plans
-Haven't thought of what sort of data analysis we can do yet. This should probably be in the form of some data vis.
-(could use some plotting library like D3).
-
-
 Data is taken from [Riot API](https://developer.riotgames.com/) V.3
 
 ## Current Topics to Explore
 - Looking at improvement over the course of all Ranked Games
 - Look at information from every Ranked Game Played
+- Add data visualization
+- Add an API endpoint in case someone is looking for something cool on this
 
 ## Constraints (?)
 Theoretically there won't be a lot of people using this so we shouldn't worry too much about space and computing costs
