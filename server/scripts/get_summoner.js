@@ -4,17 +4,14 @@
 var url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/JuiMin';
 
 // Import the http get script from files
-const httpGetModule = require('./http-get.js');
+var httpGetModule = require('./http-get.js');
 
 // Options for the HTTP request
 // Includes method and header info as well as credentials
-var options = {
+let options = {
 	method: "GET",
 	credentials: "same-origin"
 }
 
-// Run the api call
-let summonerJSON = httpGetModule.fetchURLData(url, options);
-
-// Log the data that we get back from the api call
-// console.log(summonerJSON);
+// Test the call with a temp variable
+var summonerJSON = httpGetModule.fetchURLData(url, options);
