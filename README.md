@@ -9,7 +9,7 @@
 - [NPM](https://www.npmjs.com/)
 #### Templating
 - [PUG](https://pugjs.org/api/getting-started.html)
-- [Stylus(http://stylus-lang.com/)]
+- [Stylus](http://stylus-lang.com/)
 
 ## Description
 This project aims to find some use for the Riot API that we can't find elsewhere on the web
