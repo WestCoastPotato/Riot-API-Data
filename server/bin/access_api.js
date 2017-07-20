@@ -9,5 +9,13 @@ request.open('GET', 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-
 // Set the request header's token to be the API key
 request.setRequestHeader('X-Riot-Token', KEY);
 
+// Set the on state change listener to see if this state did something good
+request.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("demo").innerHTML = this.responseText;
+  }
+};
+
+
 // Send the HTTP request
 request.send();
