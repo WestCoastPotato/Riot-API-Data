@@ -2,15 +2,6 @@
 
 [![Build Status](https://travis-ci.org/WestCoastPotato/Riot-API-Data.svg?branch=master)](https://travis-ci.org/WestCoastPotato/Riot-API-Data)
 
-## Technology
-#### JavaScript
-- [React JS](https://facebook.github.io/react/)
-- [Express](https://expressjs.com/)
-
-#### Templating
-- [PUG/Jade](https://pugjs.org/api/getting-started.html)
-- [Stylus](http://stylus-lang.com/)
-
 ## Description
 This project aims to find some use for the Riot API that we can't find elsewhere on the web
 
@@ -26,6 +17,17 @@ Data is taken from [Riot API](https://developer.riotgames.com/) V.3
 - Look at information from every Ranked Game Played
 - Add data visualization
 - Add an API endpoint in case someone is looking for something cool on this
+
+
+## Technology
+#### JavaScript
+- [React JS](https://facebook.github.io/react/)
+- [Express](https://expressjs.com/)
+
+#### Templating
+- [PUG/Jade](https://pugjs.org/api/getting-started.html)
+- [Stylus](http://stylus-lang.com/)
+
 
 ## Constraints (?)
 Theoretically there won't be a lot of people using this so we shouldn't worry too much about space and computing costs
