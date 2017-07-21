@@ -17,6 +17,7 @@ Data is taken from [Riot API](https://developer.riotgames.com/) V.3
 - Look at information from every Ranked Game Played
 - Add data visualization
 - Add an API endpoint in case someone is looking for something cool on this
+- View normal game statistics
 
 
 ## Technology
