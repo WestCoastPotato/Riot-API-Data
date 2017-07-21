@@ -1,5 +1,5 @@
 // Set-up Access to the Riot API
-const KEY = 'RGAPI-3dcb37b4-c1b9-4c8d-af30-8223d9256298';
+const API_KEY = 'api_key=' + 'RGAPI-9c7690c4-8441-4d29-a894-9761bab4ca58';
 
 // Import whatwg-fetch
 var fetchModule = require('whatwg-fetch');
@@ -10,6 +10,7 @@ function status(response) {
 		console.log("HTTP Status Code:" + response.status);
 		return Promise.reject(new Error(response.statusText));
 	} else {
+		console.log("HTTP 200");
 		return Promise.resolve(response);
 	}
 }
@@ -20,21 +21,24 @@ function json(response) {
 
 // Insert the API Key into the URL
 function composeURL(url) {
-	return url + KEY + "other stuff";
+	return url + API_KEY;
 }
 
 // Perform the HTTP request to the fetch API
 // Promises used for asynch tasking and error catching
 exports.fetchURLData = function(url, options) {
 	fetchModule.fetch(composeURL(url), options)
-	.then(status)
-	.then(json)
-	.then(function(data) {
-		console.log('Reqest Succeeded with response: ', data);
-		return data;
-	}).catch(function(err) {
-		// Error is thrown, logging error
-		console.log('Fetch Error', err);
-		return err;
-	});
+		.then(function(response) {
+			if (response.status != 200) {
+				console.log("HTTP Status Code: " + response.status);
+			} else {
+				console.log("Http Status 200");
+				return response.blob();
+			}
+		}).catch(function(err) {
+			// Error is thrown, logging error
+			console.log('Fetch Error', err);
+			return err;
+		}
+	);
 }
