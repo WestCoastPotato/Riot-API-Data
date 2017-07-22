@@ -30,6 +30,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/api', api);
 
+// Try getting my summoner information
 var getSummonerModule = require('./scripts/get_summoner.js');
 getSummonerModule.searchSummoner('JuiMin');
 
