@@ -1,7 +1,11 @@
-// Import fetch
+// This file exports the HTTP request function that utilizes fetch.
+// Other files can use this function to send API requests
+// with a passed in URL, HTTP options, and output function
+
+// Import fetch from the node-fetch package
 var fetch = require('node-fetch');
 
-// Set-up Access to the Riot API
+// Set the RIOT API key -- expires every day
 const API_KEY = 'RGAPI-2169bdf3-61b4-4c08-b675-0705aa84f7a5';
 
 // Check that the api responded with something that we need
@@ -18,10 +22,11 @@ function statusCheck(response) {
 	}
 }
 
-// Perform the HTTP request to the fetch API
-// Promises used for asynch tasking and error catching
-exports.fetchURLData = function(url, options, outputFunc) {
-	fetch(url + 'api_key=' + API_KEY, options)
+// Takes in the API request URL and the desired function for the result JSON
+// and sends an HTTP request to the RIOT API server. If this request succeeds, the
+// passed in function is run with the response JSON
+exports.apiRequest = function(url, outputFunc) {
+	fetch(url + 'api_key=' + API_KEY)
 		// Check the status of the api call
 		.then(statusCheck)
 		// Check the response of the api call

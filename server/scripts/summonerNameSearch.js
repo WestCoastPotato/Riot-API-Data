@@ -4,19 +4,13 @@
 var url = 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/';
 
 // Import the http get script from files
-var httpGetModule = require('./httpGetRequester.js');
+var requester = require('./httpGetRequester.js');
 
-// Options for the HTTP request
-// Includes method and header info as well as credentials
-let options = {
-	method: "GET",
-	credentials: "same-origin"
-}
-
-// Search for the given summoner
+// Takes in a String variable that should be the summoner's screen name.
+// This feeds the name into an API query URL and uses the requester to query the API
 exports.searchSummoner = function (name) {
 	url += name + '?';
-	httpGetModule.fetchURLData(url, options, function(json) {
+	requester.apiRequest(url, function(json) {
 		// Do something with the json data that is returned
 		console.log(json);
 	});
