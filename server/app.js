@@ -1,7 +1,12 @@
+// This page contains the app structure for the server
+
+// Import express JS packages
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+
+// Import parsers for different objects
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
@@ -48,4 +53,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// Run testing API
+var tester = require("./test/testAPI.js");
+tester.userSearchTest();
+
+// Export the app
 module.exports = app;
