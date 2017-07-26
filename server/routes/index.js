@@ -8,7 +8,14 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send("This is the home page of the application. Should redirect to the front end application");
+  // res.redirect("http://localhost:3000");
+  let urlComponents = req.headers.host.split(":");
+  if (urlComponents[0] == "localhost") {
+    res.redirect("http://localhost:3000");
+  } else {
+    res.redirect(req.headers.host);
+  }
+  // res.send("This is the home page of the application. Should redirect to the front end application");
 });
 
 // Route everything else back to the front end if we don't recognize it

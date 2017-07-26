@@ -42,9 +42,9 @@ router.get('/match/:matchID', function(req, res, next) {
 router.get('/', function(req, res, next) {
   // Redirect to react app
   res.status(200).send(
-    "Welcome to the application API. " +
-    "If you try localhost on port 3001 (localhost:3001), userId search is available. " +
-    "Ex: localhost:3001/user/Kryowing"
+    "<div>Welcome to the application API.</div>" +
+    "<div>If you try localhost on port 3001 (localhost:3001), userId search is available</div>" +
+    "<div>Ex: localhost:3001/api/user/Kryowing</div>"
   );
 });
 
