@@ -41,7 +41,11 @@ router.get('/match/:matchID', function(req, res, next) {
 /* GET api home page. */
 router.get('/', function(req, res, next) {
   // Redirect to react app
-  res.status(200).send("Welcome to the application API");
+  res.status(200).send(
+    "Welcome to the application API. " +
+    "If you try localhost on port 3001 (localhost:3001), userId search is available. " +
+    "Ex: localhost:3001/user/JuiMin"
+  );
 });
 
 /* GET api home page. */
