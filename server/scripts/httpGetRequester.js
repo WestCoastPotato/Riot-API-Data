@@ -15,7 +15,6 @@ function statusCheck(response) {
 	if (response.status != 200) {
 		// If HTTP code is not 200 throw an error
 		var error = new Error(response.statusText);
-		console.log("HTTP Status Code:" + response.status);
 		error.response = response;
 		throw error;
 	} else {
