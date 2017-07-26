@@ -1,5 +1,8 @@
 // This page contains the app structure for the server
 
+// Use strict javascript
+"use strict";
+
 // Import express JS packages
 var express = require('express');
 var path = require('path');
@@ -13,7 +16,6 @@ var bodyParser = require('body-parser');
 // Require the routing pages
 var index = require('./routes/index');
 var api = require('./routes/api');
-var search = require('./routes/search');
 
 // Start express
 var app = express();
@@ -51,10 +53,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-// Run testing API
-var tester = require("./test/testAPI.js");
-tester.userSearchTest();
 
 // Export the app
 module.exports = app;
