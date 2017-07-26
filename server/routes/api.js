@@ -17,7 +17,6 @@ router.get('/user/:userID', function(req, res, next) {
 
   // If the user is in the system -- grab their data and populate the application
     // Send data to react
-
   nameSearch.searchSummoner(req.params.userID)
     .then(function(response) {
       res.status(200).send(response);
