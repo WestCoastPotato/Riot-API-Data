@@ -8,8 +8,8 @@
 var express = require('express');
 var router = express.Router();
 
-// Require scripts
-var summonerNameSearch
+// Require scripts from scripts folder for interfacing with RIOT API
+var nameSearch = require("../scripts/summonerNameSearch.js");
 
 // Route to the main page of a searched user
 router.get('/user/:userID', function(req, res, next) {
@@ -17,7 +17,7 @@ router.get('/user/:userID', function(req, res, next) {
 
   // If the user is in the system -- grab their data and populate the application
     // Send data to react
-  let nameSearch = require("../scripts/summonerNameSearch.js");
+
   nameSearch.searchSummoner(req.params.userID)
     .then(function(response) {
       res.status(200).send(response);
