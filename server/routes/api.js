@@ -44,7 +44,7 @@ router.get('/', function(req, res, next) {
   res.status(200).send(
     "Welcome to the application API. " +
     "If you try localhost on port 3001 (localhost:3001), userId search is available. " +
-    "Ex: localhost:3001/user/JuiMin"
+    "Ex: localhost:3001/user/Kryowing"
   );
 });
 
