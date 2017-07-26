@@ -1,5 +1,8 @@
 // This page contains a collection of tests for testing out the API
 
+// Import the assertion from mocha
+var assert = require('assert');
+
 // Exports the testing script
 exports.userSearchTest = function() {
   // Test the user lookup
@@ -8,10 +11,15 @@ exports.userSearchTest = function() {
   // Import the functions from the matchlist gathering service
   let matchList = require("../scripts/matchListGather.js");
 
-  // userSearch.searchSummoner("JuiMin"); // User ID = 39989015 (json.accountid)
+  userSearch.searchSummoner("JuiMin")
+    .then(function(data) {
+      console.log(data);
+    }).catch(function(err) {
+      console.log(err); // Throw error if there is a problem with the data
+    });
   // userSearch.searchSummoner("Kryowing"); // User ID = 45188697 (json.accountid)
 
   // Test the match list lookup
-  matchList.getList("39989015", false);
-  // matchList.getList("45188697", false);
+  // matchList.getList("39989015", false); // JuiMin
+  // matchList.getList("45188697", false); // Kryowing
 }
