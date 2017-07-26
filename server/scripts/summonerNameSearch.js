@@ -1,5 +1,7 @@
 // This page queries the riot API using the HTTP request code and returns the files out as JSON
 
+// Use strict javascript
+"use strict";
 // Takes in a String variable that should be the summoner's screen name.
 // This feeds the name into an API query URL and uses the requester to query the API
 exports.searchSummoner = function (name) {

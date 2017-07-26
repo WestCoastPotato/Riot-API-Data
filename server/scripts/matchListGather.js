@@ -5,6 +5,9 @@
 // THE PROGRAM SHOULD FIRST QUERY FOR THE LIST OF MATCHES AND SEE WHICH ONES EXIST
   // This will lessen the load on API calls
 
+// Use strict javascript
+"use strict";
+
 // Query the API for everything that we get from the
 // The function takes in the user ID for the summoner as a string and whether the
 // user wants ranked games or the last twenty games from the matchlist

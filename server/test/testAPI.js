@@ -1,5 +1,8 @@
 // This page contains a collection of tests for testing out the API
 
+// Use strict javascript
+"use strict";
+
 // Import the assertion from mocha
 var assert = require('assert');
 

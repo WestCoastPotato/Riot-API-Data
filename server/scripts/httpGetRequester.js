@@ -2,6 +2,8 @@
 // Other files can use this function to send API requests
 // with a passed in URL, HTTP options, and output function
 
+// Use strict javascript
+"use strict";
 // Import fetch from the node-fetch package
 var fetch = require('node-fetch');
 
