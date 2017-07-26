@@ -15,5 +15,6 @@
     "node-fetch": "^1.7.1",
     "promise-polyfill": "6.0.2",
     "serve-favicon": "~2.4.2"
-  }
+  },
+  "devDependencies": {}
 }

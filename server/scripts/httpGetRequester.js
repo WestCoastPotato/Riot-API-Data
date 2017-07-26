@@ -25,18 +25,20 @@ function statusCheck(response) {
 // Takes in the API request URL and the desired function for the result JSON
 // and sends an HTTP request to the RIOT API server. If this request succeeds, the
 // passed in function is run with the response JSON
-exports.apiRequest = function(url, outputFunc) {
-	fetch(url + 'api_key=' + API_KEY)
+
+// Returns a promise
+exports.apiRequest = function(url) {
+	return fetch(url + 'api_key=' + API_KEY)
 		// Check the status of the api call
 		.then(statusCheck)
 		// Check the response of the api call
 		.then(function(response) {
+			// Returns the response json
 			return response.json();
 		}).then(function(json) {
-			// Do something with the response JSON
-			outputFunc(json);
-		// If the promises reach an error then log the error on the console
+			return json;
 		}).catch(function(error) {
+			// If the promises reach an error then log the error on the console
 			console.log(error);
 		});
 }

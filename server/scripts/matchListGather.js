@@ -15,11 +15,10 @@ exports.getList = function(userID,ranked) {
   // Base URLs for getting match lists
   let baseUrl = "https://na1.api.riotgames.com/lol/match/v3/matchlists/by-account/";
   // Test if the user wants all ranked games or the last 20 games by the user
-  let preparedUrl = "";
   if (ranked) {
-  	preparedUrl = baseUrl + userID + '?';
+  	var preparedUrl = baseUrl + userID + '?';
   } else {
-    preparedUrl = baseUrl + userID + "/recent?";
+    var preparedUrl = baseUrl + userID + "/recent?";
   }
   // Run the query and input the next function
   requester.apiRequest(preparedUrl, function(matchlist) {
