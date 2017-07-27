@@ -1,6 +1,8 @@
 # RIOT API Project
 
 [![Build Status](https://travis-ci.org/WestCoastPotato/Riot-API-Data.svg?branch=master)](https://travis-ci.org/WestCoastPotato/Riot-API-Data)
+[![codecov](https://codecov.io/gh/WestCoastPotato/Riot-API-Data/branch/master/graph/badge.svg)](https://codecov.io/gh/WestCoastPotato/Riot-API-Data)
+
 
 ## Description
 This project aims to find some use for the Riot API that we can't find elsewhere on the web
