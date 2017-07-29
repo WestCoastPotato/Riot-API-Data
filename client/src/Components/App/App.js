@@ -23,14 +23,13 @@ class App extends Component {
 
           <div id="menu">
             <Link to="/">Home</Link>
-            <Link to="/user">User</Link>
           </div>
 
           <p className="App-intro">
             This Project will aim to gather data about a specific user from the Riot API and provide meaningful
             analytics surrounding their performance.
           </p>
-          
+
           <Route exact path="/" component={Home}/>
           <Route path="/user/:userID" component={User}></Route>
         </div>
