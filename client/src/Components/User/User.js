@@ -1,4 +1,4 @@
-sudo // IMport react components and react
+// IMport react components and react
 import React, { Component } from 'react';
 import './User.css';
 
