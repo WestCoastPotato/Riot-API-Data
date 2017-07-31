@@ -1,13 +1,20 @@
+// This page contains the app structure for the server
+
+// Use strict javascript
+"use strict";
+
+// Import express JS packages
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+
+// Import parsers for different objects
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 // Require the routing pages
 var index = require('./routes/index');
-var users = require('./routes/users');
 var api = require('./routes/api');
 
 // Start express
@@ -26,9 +33,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set the application to use all routing pages
-app.use('/', index);
-app.use('/users', users);
 app.use('/api', api);
+app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -48,4 +54,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// Export the app
 module.exports = app;
