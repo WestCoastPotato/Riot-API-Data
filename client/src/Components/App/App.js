@@ -3,13 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 
 // Import routes
-import Home from '../Home/Home.js'
+import Home from '../Home/Home.js';
+import User from '../User/User.js';
 
 // React Router Dom import components
 // using ES6 modules
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 class App extends Component {
+
   render() {
     return (
       <BrowserRouter>
@@ -30,7 +32,9 @@ class App extends Component {
             This Project will aim to gather data about a specific user from the Riot API and provide meaningful
             analytics surrounding their performance.
           </p>
+
           <Route exact path="/" component={Home}/>
+          <Route path="/user/:userID" component={User}></Route>
         </div>
       </BrowserRouter>
     );
