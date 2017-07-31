@@ -2,15 +2,18 @@
 import React, { Component } from 'react';
 import './User.css';
 
-
 // React component that should diplay user stats for the currently searched user
 class User extends Component {
   // Get the props for this component and add them to the state
   constructor(props) {
     super(props);
-    this.state = {
-      userID: props.match.params.userID
-    };
+    if (props.match != null) {
+      this.state = {
+        userID: props.match.params.userID
+      };
+    } else {
+      this.state = {}
+    }
   }
 
   componentWillMount() {
