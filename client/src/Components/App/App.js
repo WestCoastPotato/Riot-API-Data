@@ -18,8 +18,11 @@ class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h2>API Project v0.0.2</h2>
           </div>
-          
+
           <div id="menu">
+            <Link to="/">Home</Link>
+            <Link to="/">User</Link>
+            <Link to="/"></Link>
             <Link to="/">Home</Link>
           </div>
 
