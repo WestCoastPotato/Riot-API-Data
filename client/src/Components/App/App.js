@@ -24,8 +24,6 @@ class App extends Component {
           <div id="menu">
             <Link to="/">Home</Link>
             <Link to="/">User</Link>
-            <Link to="/"></Link>
-            <Link to="/">Home</Link>
           </div>
 
           <p className="App-intro">
