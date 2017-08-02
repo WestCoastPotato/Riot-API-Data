@@ -26,7 +26,6 @@ class User extends Component {
   }
 
   componentWillMount() {
-    console.log("hey there");
     // When recognizing that the component will mount, the component
     // will run the script javascript to see if there is a user with this credential
     // If the user is the current cookie -- do nothing
