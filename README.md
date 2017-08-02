@@ -23,6 +23,9 @@ Data is taken from [Riot API](https://developer.riotgames.com/) V.3
 - Work on homepage UI
 - What day of the week does a person win the most? What time of day?
 
+## Requires
+- Node.js v6.11
+- npm v5.3
 
 ## Technology
 #### JavaScript
