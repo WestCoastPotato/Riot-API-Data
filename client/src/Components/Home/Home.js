@@ -4,10 +4,10 @@ import './Home.css';
 class Home extends Component {
   render() {
     return (
-      <div className="App">
-        <p className="App-intro">
-          This component should display the project search bar for the user to look up people
-        </p>
+      <div className="home">
+          <form id="searchSummonerForm">
+            Search User: <input type="text" id="summonerSearchBar" /> <input type="submit" />
+          </form>
       </div>
     );
   }

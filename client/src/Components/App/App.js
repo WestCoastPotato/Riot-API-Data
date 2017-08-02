@@ -3,12 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 
 // Import routes
-import Home from '../Home/Home.js';
-import User from '../User/User.js';
+import Home from '../Home/Home';
+import User from '../User/User';
 
 // React Router Dom import components
 // using ES6 modules
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 class App extends Component {
 
@@ -21,17 +21,15 @@ class App extends Component {
             <h2>API Project v0.0.2</h2>
           </div>
 
-          <div id="menu">
-            <Link to="/">Home</Link>
-          </div>
-
           <p className="App-intro">
             This Project will aim to gather data about a specific user from the Riot API and provide meaningful
             analytics surrounding their performance.
           </p>
 
-          <Route exact path="/" component={Home}/>
-          <Route path="/user/:userID" component={User}></Route>
+          <div className="routeContainer">
+            <Route path="/" component={Home}/>
+            <Route path="/user/:userID" component={User}></Route>
+          </div>
         </div>
       </BrowserRouter>
     );
