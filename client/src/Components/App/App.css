@@ -22,3 +22,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.routeContainer {
+  margin: auto;
+  width: 90%;
+}
+
+.intro {
+  margin-top: 20px;
+}

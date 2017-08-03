@@ -1,0 +1,19 @@
+.Menu {
+  padding-top: 10px;
+}
+
+.menuItem {
+  margin: 5px;
+}
+
+.userData {
+  padding-top: 20px;
+}
+
+#toSearch {
+  margin: 20px;
+}
+
+h2 {
+  margin-bottom: 0;
+}
