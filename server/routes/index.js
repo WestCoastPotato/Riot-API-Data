@@ -11,8 +11,8 @@ router.get('/', function(req, res, next) {
   // res.redirect("http://localhost:3000");
   let urlComponents = req.headers.host.split(":");
   if (urlComponents[0] == "localhost") {
-    //res.redirect("http://localhost:3000");
-    res.send("This is the home page of the application. Should redirect to the front end application");
+    res.redirect("http://localhost:3000");
+    //res.send("This is the home page of the application. Should redirect to the front end application");
   } else {
     res.redirect(req.headers.host);
   }
