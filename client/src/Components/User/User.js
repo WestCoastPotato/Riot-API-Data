@@ -40,11 +40,17 @@ class User extends Component {
     }
     // bind the function for redirecting
     this.toSearch = this.toSearch.bind(this);
+    this.updateUser = this.updateUser.bind(this);
   }
 
   // Set the redirect to the search bar
   toSearch() {
     this.setState({redirect: true});
+  }
+
+  // This will trigger an update user function
+  updateUser() {
+
   }
 
   render() {
@@ -55,7 +61,8 @@ class User extends Component {
       <BrowserRouter>
         <div className="userDisplay">
           <h2>{this.state.userID}</h2>
-          <button id="toSearch" onClick={this.toSearch}>Search Different User</button>
+          <button className="button" onClick={this.updateUser}>Update User</button>
+          <button className="button" onClick={this.toSearch}>Search Different User</button>
           <div className="Menu">
             <Link className="menuItem" to={this.state.profileRoute}>Profile</Link>
             <Link className="menuItem" to={this.state.matchListRoute}>Match List</Link>
