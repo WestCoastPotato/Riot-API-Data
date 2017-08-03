@@ -23,5 +23,19 @@ router.get('/summoner/:userID', function(req, res, next) {
     });
 });
 
+/* GET REQUEST FOR THE API SCRIPT CALL */
+router.get('/rank/:userID', function(req, res, next) {
+  let urlComponents = req.headers.host.split(":");
+  // If the user is in the system -- grab their data and populate the application
+    // Send data to react
+  rankInfo.searchSummoner(req.params.userID)
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch(function(err) {
+      res.send(err);
+    });
+});
+
 // Export the router
 module.exports = router;
