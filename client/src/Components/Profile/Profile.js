@@ -34,6 +34,8 @@ class Profile extends Component {
       .then(function(text) {
         // If we reached here then we should have the json and can add it to the state
         this.setState({userInfo: text});
+
+        // We are going to need to use another fetch to get the rank information
         return text;
       }.bind(this))
       .catch(function(error) {
