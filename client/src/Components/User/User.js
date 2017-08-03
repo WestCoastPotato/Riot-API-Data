@@ -17,8 +17,8 @@ class User extends Component {
     // Super
     super(props);
     // Set the state if nothing has been set yet
-    if (this.state == null) {
-      if (this.match != null) {
+    if (this.props.match != null){
+      if (this.props.match.params.userID != null) {
         this.state = {
           redirect: false,
           userID: this.props.match.params.userID,
@@ -26,15 +26,17 @@ class User extends Component {
           matchListRoute: "/user/" + this.props.match.params.userID + "/matchlist",
           currentGameRoute: "/user/" + this.props.match.params.userID + "/currentGame"
         };
-      } else {
-        this.state = {
-          redirect: false,
-          userID: "userID",
-          profileRoute: "/user/" + "userID" + "/profile",
-          matchListRoute: "/user/" + "userID" + "/matchlist",
-          currentGameRoute: "/user/" + "userID" + "/currentGame"
-        };
       }
+    }
+    // If the state was not set with valid inputs, use the dummy state
+    if (this.state == null) {
+      this.state = {
+        redirect: false,
+        userID: "userID",
+        profileRoute: "/user/userID/profile",
+        matchListRoute: "/user/userID/matchlist",
+        currentGameRoute: "/user/userID/currentGame"
+      };
     }
     // bind the function for redirecting
     this.toSearch = this.toSearch.bind(this);
