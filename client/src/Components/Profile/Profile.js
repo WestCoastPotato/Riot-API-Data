@@ -12,8 +12,14 @@ class Profile extends Component {
 
     // If the current state is null set the current state
     if (this.state == null) {
-      this.state = {
-        searchText: this.props.match.path.split("/")[2]
+      if (this.props.match != null) {
+        this.state = {
+          searchText: this.props.match.path.split("/")[2]
+        }
+      } else {
+        this.state = {
+          searchText: 'userID'
+        }
       }
     }
   }

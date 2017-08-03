@@ -18,12 +18,23 @@ class User extends Component {
     super(props);
     // Set the state if nothing has been set yet
     if (this.state == null) {
-      this.state = {
-        redirect: false,
-        profileRoute: "/user/" + this.props.match.params.userID + "/profile",
-        matchListRoute: "/user/" + this.props.match.params.userID + "/matchlist",
-        currentGameRoute: "/user/" + this.props.match.params.userID + "/currentGame",
-      };
+      if (this.match != null) {
+        this.state = {
+          redirect: false,
+          userID: this.props.match.params.userID,
+          profileRoute: "/user/" + this.props.match.params.userID + "/profile",
+          matchListRoute: "/user/" + this.props.match.params.userID + "/matchlist",
+          currentGameRoute: "/user/" + this.props.match.params.userID + "/currentGame"
+        };
+      } else {
+        this.state = {
+          redirect: false,
+          userID: "userID",
+          profileRoute: "/user/" + "userID" + "/profile",
+          matchListRoute: "/user/" + "userID" + "/matchlist",
+          currentGameRoute: "/user/" + "userID" + "/currentGame"
+        };
+      }
     }
     // bind the function for redirecting
     this.toSearch = this.toSearch.bind(this);
@@ -41,7 +52,7 @@ class User extends Component {
     return (
       <BrowserRouter>
         <div className="userDisplay">
-          <h2>{this.props.match.params.userID}</h2>
+          <h2>{this.state.userID}</h2>
           <button id="toSearch" onClick={this.toSearch}>Search Different User</button>
           <div className="Menu">
             <Link className="menuItem" to={this.state.profileRoute}>Profile</Link>
