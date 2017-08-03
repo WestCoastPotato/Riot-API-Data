@@ -23,6 +23,12 @@ Data is taken from [Riot API](https://developer.riotgames.com/) V.3
 - Work on homepage UI
 - What day of the week does a person win the most? What time of day?
 
+## How to Run
+Since this isn't hosted on anything at the moment, we can run it by running npm start on both
+the client and the server. Doing so will allow the user to run the application locally. (This
+will become more complex if we use local data storage). As of right now, since everything is not online
+the data is purely gathered through API calls. This is very inefficient and will change on deployment
+
 ## Requires
 - Node.js v6.11
 - npm v5.3
