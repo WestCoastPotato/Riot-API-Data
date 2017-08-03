@@ -7,6 +7,7 @@ var router = express.Router();
 
 // Require scripts from scripts folder for interfacing with RIOT API
 var nameSearch = require("../scripts/summonerNameSearch.js");
+var rankInfo = require("../scripts/rankInfo.js");
 
 /* GET REQUEST FOR THE API SCRIPT CALL */
 router.get('/summoner/:userID', function(req, res, next) {
@@ -15,7 +16,7 @@ router.get('/summoner/:userID', function(req, res, next) {
     // Send data to react
   nameSearch.searchSummoner(req.params.userID)
     .then(function(response) {
-      res.status(200).send(response);
+      console.log(response);
     })
     .catch(function(err) {
       res.send(err);
