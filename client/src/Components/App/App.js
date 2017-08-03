@@ -18,16 +18,11 @@ class App extends Component {
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h2>API Project v0.0.2</h2>
+            <h2>API Project v0.0.3</h2>
           </div>
 
-          <p className="App-intro">
-            This Project will aim to gather data about a specific user from the Riot API and provide meaningful
-            analytics surrounding their performance.
-          </p>
-
           <div className="routeContainer">
-            <Route path="/" component={Home}/>
+            <Route exact path="/" component={Home}/>
             <Route path="/user/:userID" component={User}></Route>
           </div>
         </div>

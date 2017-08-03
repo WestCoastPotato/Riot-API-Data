@@ -1,5 +1,4 @@
 .Menu {
-  margin-top: 10px;
   padding-top: 10px;
 }
 
@@ -8,5 +7,13 @@
 }
 
 .userData {
-  padding-top: 20px; 
+  padding-top: 20px;
+}
+
+#toSearch {
+  margin: 20px;
+}
+
+h2 {
+  margin-bottom: 0;
 }

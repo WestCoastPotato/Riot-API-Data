@@ -5,7 +5,7 @@ class CurrentGame extends Component {
   render() {
     return (
       <div className="CurrentGame">
-        This component should display the currentGame of the user
+        <button>Get Current Game</button>
       </div>
     );
   }
