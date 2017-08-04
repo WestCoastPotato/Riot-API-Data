@@ -8,7 +8,6 @@ import 'whatwg-fetch';
 class Profile extends Component {
   constructor(props) {
     super(props);
-
     // If the current state is null set the current state
     if (this.state == null) {
       if (this.props.match != null) {
@@ -44,8 +43,8 @@ class Profile extends Component {
 
   componentWillMount() {
     // Check database for the data that we need
-    // REQUIRES 1 API CALL
-    fetch("http://localhost:3001/scripts/summoner/" + this.state.searchText)
+    // REQUIRES 2 API CALLS
+    fetch(window.location.origin + "/scripts/summoner/" + this.state.searchText)
       .then(function(response) {
         return response.json();
       })
@@ -53,7 +52,7 @@ class Profile extends Component {
         // FETCH THE RANKED DATA
         // If we reached here then we should have the json and can add it to the state
         this.setState({userInfo: text, username: text.name, userId: text.id});
-        return fetch("http://localhost:3001/scripts/ranked/" + this.state.userId)
+        return fetch(window.location.origin + "/scripts/ranked/" + this.state.userId)
           .then(function(response) {
             return response.json();
           })
