@@ -5,7 +5,6 @@ import './Profile.css';
 // Import fetch
 import 'whatwg-fetch';
 
-
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -14,13 +13,32 @@ class Profile extends Component {
     if (this.state == null) {
       if (this.props.match != null) {
         this.state = {
-          searchText: this.props.match.path.split("/")[2]
+          searchText: this.props.match.path.split("/")[2],
+          ranked: null
         }
       } else {
         this.state = {
-          searchText: 'userID'
+          searchText: 'userID',
+          ranked: null
         }
       }
+    }
+    this.renderRankedStats = this.renderRankedStats.bind(this);
+  }
+
+  renderRankedStats(json) {
+    if (json != null) {
+      return (
+        <div className="Ranked">
+          <h4>{json.queueType} - {json.tier} {json.rank}</h4>
+          {json.leagueName}
+          <ul>
+            <li>LP - {json.leaguePoints}</li>
+            <li>Wins - {json.wins}</li>
+            <li>Losses - {json.losses}</li>
+          </ul>
+        </div>
+      );
     }
   }
 
@@ -32,9 +50,24 @@ class Profile extends Component {
         return response.json();
       })
       .then(function(text) {
+        // FETCH THE RANKED DATA
         // If we reached here then we should have the json and can add it to the state
-        this.setState({userInfo: text});
-        return text;
+        this.setState({userInfo: text, username: text.name, userId: text.id});
+        return fetch("http://localhost:3001/scripts/ranked/" + this.state.userId)
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(response) {
+            return response;
+          })
+          .catch(function(error) {
+            console.log(error);
+            return error;
+          })
+      }.bind(this))
+      .then(function(json) {
+        // Parse the json into the state
+        this.setState({rankedSolo: json[0], rankedFlex: json[1]});
       }.bind(this))
       .catch(function(error) {
         console.log(error);
@@ -45,24 +78,20 @@ class Profile extends Component {
     if (this.state.userInfo != null) {
       return (
         <div className="Profile">
-          This component should display the Profile of the selected user
-          <ul>
-            <li>Account ID: {this.state.userInfo.accountId}</li>
-            <li>ID: {this.state.userInfo.id}</li>
-            <li>Name: {this.state.userInfo.name}</li>
-            <li>Icon: {this.state.userInfo.profileIconId}</li>
-            <li>Summoner Level: {this.state.userInfo.summonerLevel}</li>
-            <li>Revision Date: {this.state.userInfo.revisionDate}</li>
-          </ul>
-        </div>
-      );
-    } else {
-      return (
-        <div className="Profile">
-          This component should display the Profile of the selected user
+          <h2>{this.state.userInfo.name}</h2>
+          <h3>Level {this.state.userInfo.summonerLevel}</h3>
+          <div className="Stats">
+            {this.renderRankedStats(this.state.rankedSolo)}
+            {this.renderRankedStats(this.state.rankedFlex)}
+          </div>
         </div>
       );
     }
+    return (
+      <div className="Profile">
+        This component should display the Profile of the selected user
+      </div>
+    );
   }
 }
 
