@@ -50,7 +50,7 @@ class User extends Component {
 
   // This will trigger an update user function
   updateUser() {
-    
+
   }
 
   render() {
