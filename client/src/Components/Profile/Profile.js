@@ -23,6 +23,23 @@ class Profile extends Component {
         }
       }
     }
+    this.renderRankedStats = this.renderRankedStats.bind(this);
+  }
+
+  renderRankedStats(json) {
+    if (json != null) {
+      return (
+        <div className="Ranked">
+          <h4>{json.queueType} - {json.tier} {json.rank}</h4>
+          {json.leagueName}
+          <ul>
+            <li>LP - {json.leaguePoints}</li>
+            <li>Wins - {json.wins}</li>
+            <li>Losses - {json.losses}</li>
+          </ul>
+        </div>
+      );
+    }
   }
 
   componentWillMount() {
@@ -33,6 +50,7 @@ class Profile extends Component {
         return response.json();
       })
       .then(function(text) {
+        // FETCH THE RANKED DATA
         // If we reached here then we should have the json and can add it to the state
         this.setState({userInfo: text, username: text.name, userId: text.id});
         return fetch("http://localhost:3001/scripts/ranked/" + this.state.userId)
@@ -58,35 +76,16 @@ class Profile extends Component {
 
   render() {
     if (this.state.userInfo != null) {
-      if (this.state.rankedSolo != null) {
-        console.log(this.state.rankedSolo);
-        return (
-          <div className="Profile">
-            <h2>{this.state.userInfo.name}</h2>
-            <h3>Level {this.state.userInfo.summonerLevel}</h3>
-            <div className="Stats">
-              <div className="Ranked">
-                <h4>Solo/Duo - {this.state.rankedSolo.tier} {this.state.rankedSolo.rank}</h4>
-                {this.state.rankedSolo.leagueName}
-                <ul>
-                  <li>LP - {this.state.rankedSolo.leaguePoints}</li>
-                  <li>Wins - {this.state.rankedSolo.wins}</li>
-                  <li>Losses - {this.state.rankedSolo.losses}</li>
-                </ul>
-              </div>
-              <div className="Ranked">
-                <h4>Flex - {this.state.rankedFlex.tier} {this.state.rankedFlex.rank}</h4>
-                {this.state.rankedFlex.leagueName}
-                <ul>
-                  <li>LP - {this.state.rankedFlex.leaguePoints}</li>
-                  <li>Wins - {this.state.rankedFlex.wins}</li>
-                  <li>Losses - {this.state.rankedFlex.losses}</li>
-                </ul>
-              </div>
-            </div>
+      return (
+        <div className="Profile">
+          <h2>{this.state.userInfo.name}</h2>
+          <h3>Level {this.state.userInfo.summonerLevel}</h3>
+          <div className="Stats">
+            {this.renderRankedStats(this.state.rankedSolo)}
+            {this.renderRankedStats(this.state.rankedFlex)}
           </div>
-        );
-      }
+        </div>
+      );
     }
     return (
       <div className="Profile">

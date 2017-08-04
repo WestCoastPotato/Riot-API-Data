@@ -11,11 +11,21 @@ import User from '../User/User';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    // Set the initial state
+    this.state = {redirect: false};
+    // Set the redirect listener to be part of the state
+    this.toHome = this.toHome.bind(this);
+  }
+  toHome() {
+    this.setState({redirect: true});
+  }
 
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <div className="App" onClick={this.toHome}>
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h2>API Project v0.1</h2>
