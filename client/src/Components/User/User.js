@@ -54,7 +54,6 @@ class User extends Component {
     return (
       <BrowserRouter>
         <div className="userDisplay">
-          <h2>{this.state.userID}</h2>
           <button id="toSearch" onClick={this.toSearch}>Search Different User</button>
           <div className="Menu">
             <Link className="menuItem" to={this.state.profileRoute}>Profile</Link>
