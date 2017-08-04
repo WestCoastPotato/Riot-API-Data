@@ -50,7 +50,7 @@ class User extends Component {
 
   // This will trigger an update user function
   updateUser() {
-
+    
   }
 
   render() {
@@ -60,7 +60,6 @@ class User extends Component {
     return (
       <BrowserRouter>
         <div className="userDisplay">
-          <h2>{this.state.userID}</h2>
           <button className="button" onClick={this.updateUser}>Update User</button>
           <button className="button" onClick={this.toSearch}>Search Different User</button>
           <div className="Menu">

@@ -89,7 +89,7 @@ class Profile extends Component {
     }
     return (
       <div className="Profile">
-        This component should display the Profile of the selected user
+        Error rendering profile. May be a server problem.
       </div>
     );
   }
