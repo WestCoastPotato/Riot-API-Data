@@ -1,7 +1,7 @@
 # RIOT API Project
 
-[![Build Status](https://travis-ci.org/WestCoastPotato/Riot-API-Data.svg?branch=master)](https://travis-ci.org/WestCoastPotato/Riot-API-Data)
-[![codecov](https://codecov.io/gh/WestCoastPotato/Riot-API-Data/branch/master/graph/badge.svg)](https://codecov.io/gh/WestCoastPotato/Riot-API-Data)
+[![Build Status](https://travis-ci.org/JuiMin/Riot-API-Data.svg?branch=master)](https://travis-ci.org/JuiMin/Riot-API-Data)
+[![codecov](https://codecov.io/gh/JuiMin/Riot-API-Data/branch/master/graph/badge.svg)](https://codecov.io/gh/JuiMin/Riot-API-Data)
 
 
 ## Description
