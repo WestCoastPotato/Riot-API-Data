@@ -21,6 +21,8 @@ var scripts = require('./routes/scripts');
 // Start express
 var app = express();
 
+// Static web server
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -43,6 +45,9 @@ app.use(function(req, res, next) {
 // Set the application to use all routing pages
 app.use('/scripts', scripts);
 app.use('/api', api);
+
+// Use the static files generated when the react files have been built to a web packed package
+app.use(express.static('client/build'));
 app.use('/', index);
 
 
