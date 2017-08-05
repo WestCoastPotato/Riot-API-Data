@@ -44,7 +44,7 @@ class Profile extends Component {
   componentWillMount() {
     // Check database for the data that we need
     // REQUIRES 2 API CALLS
-    fetch(window.location.origin + "/scripts/summoner/" + this.state.searchText)
+    fetch(this.state.host + "/scripts/summoner/" + this.state.searchText)
       .then(function(response) {
         return response.json();
       })
