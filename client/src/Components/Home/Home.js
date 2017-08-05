@@ -21,11 +21,23 @@ class Home extends Component {
     // Bind the search function so that we can access this
     this.search = this.search.bind(this);
     this.alterTerm = this.alterTerm.bind(this);
+    this.errorRender = this.errorRender.bind(this);
   }
 
   // Alter the serach Term in the state when the user types stuff
   alterTerm(event) {
     this.setState({searchTerm: event.target.value});
+  }
+
+  // Render an error if there is something wrong with the search term
+  errorRender() {
+    if (this.state.searchTerm.length <= 0) {
+      return (
+        <div className="error">
+          Please enter a summoner name into the search bar
+        </div>
+      );
+    }
   }
 
   // Run the search of the user by sending a request to the server
@@ -41,12 +53,13 @@ class Home extends Component {
   }
 
   render() {
-    if (this.state.redirect) {
+    if (this.state.redirect && this.state.searchTerm.length > 0) {
       return <Redirect to={this.state.redirectRoute} />;
     }
     return (
       <div className="home">
         <input type="text" onChange={this.alterTerm}></input> <button onClick={this.search}>Search</button>
+        {this.errorRender()}
       </div>
     );
   }
