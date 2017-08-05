@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "cd client && npm run build && cd ../ && node ./bin/www",
-    "dev-start": "node ./bin/www"
+    "server": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.17.1",

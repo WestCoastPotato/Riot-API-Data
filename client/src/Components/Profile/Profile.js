@@ -10,18 +10,15 @@ class Profile extends Component {
     super(props);
     // If the current state is null set the current state
     if (this.state == null) {
-      if (this.props.match != null) {
-        this.state = {
-          searchText: this.props.match.path.split("/")[2],
-          ranked: null
-        }
-      } else {
-        this.state = {
-          searchText: 'userID',
-          ranked: null
-        }
+      let host = (window.location.origin === "http://localhost:3000") ? "http://localhost:3001" : window.location.origin;
+      let searched = (this.props.match != null) ? this.props.match.path.split("/")[2] : 'userID';
+      this.state = {
+        searchText: searched,
+        ranked: null,
+        host: host
       }
     }
+    console.log(this.state);
     this.renderRankedStats = this.renderRankedStats.bind(this);
   }
 
@@ -52,7 +49,7 @@ class Profile extends Component {
         // FETCH THE RANKED DATA
         // If we reached here then we should have the json and can add it to the state
         this.setState({userInfo: text, username: text.name, userId: text.id});
-        return fetch(window.location.origin + "/scripts/ranked/" + this.state.userId)
+        return fetch(this.state.host + "/scripts/ranked/" + this.state.userId)
           .then(function(response) {
             return response.json();
           })
