@@ -22,7 +22,7 @@ function statusCheck(response) {
 		return response;
 	}
 }
-
+ 
 // Takes in the API request URL and the desired function for the result JSON
 // and sends an HTTP request to the RIOT API server. If this request succeeds, the
 // passed in function is run with the response JSON
