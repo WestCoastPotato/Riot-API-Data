@@ -1,7 +1,7 @@
 # RIOT API Project
 
-[![Build Status](https://travis-ci.org/WestCoastPotato/Riot-API-Data.svg?branch=master)](https://travis-ci.org/WestCoastPotato/Riot-API-Data)
-[![codecov](https://codecov.io/gh/WestCoastPotato/Riot-API-Data/branch/master/graph/badge.svg)](https://codecov.io/gh/WestCoastPotato/Riot-API-Data)
+[![Build Status](https://travis-ci.org/JuiMin/Riot-API-Data.svg?branch=master)](https://travis-ci.org/JuiMin/Riot-API-Data)
+[![codecov](https://codecov.io/gh/JuiMin/Riot-API-Data/branch/master/graph/badge.svg)](https://codecov.io/gh/JuiMin/Riot-API-Data)
 
 
 ## Description
@@ -13,6 +13,15 @@ how to do ranked games. The server will then either cache these games and allow 
 method.
 
 Data is taken from [Riot API](https://developer.riotgames.com/) V.3
+
+## Current State
+The application currently only operates with API calls to the Riot servers. The database system is not setup yet. Models need to be made and controllers need to be made as well in order for this app to function as planned. The general gist of this is that the database will store user information from Riot's API v3 as well as game data for unique matches. These two tables should suffice in order to observe any useful information about each match.
+
+If the user does not exist in the database, the API is called in order to populate this information and it is saved once the user is found. Using this strategy we can continually populate the database and rely less on the API calls as time goes on.
+This may lead to storage issues so there might be a need for change to this system so that there is a healthy balance between storage and API usage.
+
+Currently, development is being done so that Redux is used as a global state container so that multiple calls to either the API or the database do not need to occur as vital information will be contained in the state.
+
 
 ## Current Topics to Explore
 - Looking at improvement over the course of all Ranked Games
@@ -37,6 +46,7 @@ the data is purely gathered through API calls. This is very inefficient and will
 #### JavaScript
 - [React JS](https://facebook.github.io/react/)
 - [Express](https://expressjs.com/)
+- [Redux](http://redux.js.org/)
 
 #### Templating
 - [PUG/Jade](https://pugjs.org/api/getting-started.html)
