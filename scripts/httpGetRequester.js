@@ -8,7 +8,7 @@
 var fetch = require('node-fetch');
 
 // Set the RIOT API key -- expires every day
-const API_KEY = 'RGAPI-6684eee9-8f1d-461c-bbf8-fe5314b2510b';
+const API_KEY = 'RGAPI-f68fa019-9a7f-4adf-b0ce-5030dedf4bad';
 
 // Check that the api responded with something that we need
 function statusCheck(response) {
