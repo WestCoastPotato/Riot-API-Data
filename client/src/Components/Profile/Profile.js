@@ -27,6 +27,9 @@ class Profile extends Component {
       return (
         <div className="Ranked">
           <h4>{json.queueType} - {json.tier} {json.rank}</h4>
+          <p>
+            {json.accountid}
+          </p>
           {json.leagueName}
           <ul>
             <li>LP - {json.leaguePoints}</li>
