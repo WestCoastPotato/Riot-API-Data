@@ -28,7 +28,7 @@ class App extends Component {
         <div className="App" onClick={this.toHome}>
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h2>API Project v0.1</h2>
+            <h2>API Project v0.3</h2>
           </div>
 
           <div className="routeContainer">
