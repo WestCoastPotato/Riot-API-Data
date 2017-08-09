@@ -5,8 +5,8 @@ class Match extends Component {
   render() {
     return (
       <div className="MatchList">
-        <p className="Match-intro">
-          This component should display the match list
+        <p>
+          Error dislaying the match list. May be a server issue
         </p>
       </div>
     );

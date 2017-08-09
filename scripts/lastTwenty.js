@@ -8,9 +8,9 @@ exports.getMatches = function (id) {
 	// Import the http get script from files
 	let requester = require('./httpGetRequester.js');
 	// URL for the api call to get the summoner information
-	let byNameUrl = 'https://na1.api.riotgames.com/lol/league/v3/positions/by-summoner/';
+	let url = 'https://na1.api.riotgames.com/lol/match/v3/matchlists/by-account/';
 	// Set the url with the input name
-	let preparedUrl = byNameUrl + id + '?';
+	let preparedUrl = url + id + '/recent?';
 	// Run the query through the requester
 	return requester.apiRequest(preparedUrl);
 }
