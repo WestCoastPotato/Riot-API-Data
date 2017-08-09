@@ -47,6 +47,7 @@ the data is purely gathered through API calls. This is very inefficient and will
 - [React JS](https://facebook.github.io/react/)
 - [Express](https://expressjs.com/)
 - [Redux](http://redux.js.org/)
+- [Sequelize](http://docs.sequelizejs.com/) (I am not sure if this is what we want to use yet)
 
 #### Templating
 - [PUG/Jade](https://pugjs.org/api/getting-started.html)
