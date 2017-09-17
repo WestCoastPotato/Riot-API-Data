@@ -54,4 +54,4 @@ the data is purely gathered through API calls. This is very inefficient and will
 
 
 ## Constraints (?)
-Theoretically there won't be a lot of people using this so we shouldn't worry too much about space and computing costs.
+Theoretically there won't be a lot of people using this so we shouldn't worry too much about space and computing costs
