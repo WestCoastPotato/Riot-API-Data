@@ -48,6 +48,7 @@ router.get('/twenty/:userID', function(req, res, next) {
       res.status(200).send(response);
     })
     .catch(function(err) {
+
       res.send(err);
     });
 });

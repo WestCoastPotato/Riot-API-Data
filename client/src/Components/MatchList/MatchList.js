@@ -5,7 +5,7 @@ class Match extends Component {
   // Construct the twentyMatches
   constructor(props) {
     super(props);
-    if (this.state == null) {
+    if (this.state != null) {
       fetch(this.state.host + "/scripts/twenty/" + this.state.searchText)
     }
   }
