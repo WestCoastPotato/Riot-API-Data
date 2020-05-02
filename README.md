@@ -1,4 +1,4 @@
-# RIOT API Project
+# lolchicken
 
 This project aims to build a tool that users can run on their own computers to interface with Riot's League of Legends API. Hopefully we can include some features that users would find meaningful and might not find on one of the many websites out there.
 
