@@ -8,21 +8,17 @@ import 'whatwg-fetch';
 class Profile extends Component {
   constructor(props) {
     super(props);
-
     // If the current state is null set the current state
     if (this.state == null) {
-      if (this.props.match != null) {
-        this.state = {
-          searchText: this.props.match.path.split("/")[2],
-          ranked: null
-        }
-      } else {
-        this.state = {
-          searchText: 'userID',
-          ranked: null
-        }
+      let host = (window.location.origin === "http://localhost:3000") ? "http://localhost:3001" : window.location.origin;
+      let searched = (this.props.match != null) ? this.props.match.path.split("/")[2] : 'userID';
+      this.state = {
+        searchText: searched,
+        ranked: null,
+        host: host
       }
     }
+    console.log(this.state);
     this.renderRankedStats = this.renderRankedStats.bind(this);
   }
 
@@ -31,6 +27,9 @@ class Profile extends Component {
       return (
         <div className="Ranked">
           <h4>{json.queueType} - {json.tier} {json.rank}</h4>
+          <p>
+            {json.accountid}
+          </p>
           {json.leagueName}
           <ul>
             <li>LP - {json.leaguePoints}</li>
@@ -44,8 +43,8 @@ class Profile extends Component {
 
   componentWillMount() {
     // Check database for the data that we need
-    // REQUIRES 1 API CALL
-    fetch("http://localhost:3001/scripts/summoner/" + this.state.searchText)
+    // REQUIRES 2 API CALLS
+    fetch(this.state.host + "/scripts/summoner/" + this.state.searchText)
       .then(function(response) {
         return response.json();
       })
@@ -53,7 +52,7 @@ class Profile extends Component {
         // FETCH THE RANKED DATA
         // If we reached here then we should have the json and can add it to the state
         this.setState({userInfo: text, username: text.name, userId: text.id});
-        return fetch("http://localhost:3001/scripts/ranked/" + this.state.userId)
+        return fetch(this.state.host + "/scripts/ranked/" + this.state.userId)
           .then(function(response) {
             return response.json();
           })
@@ -89,7 +88,7 @@ class Profile extends Component {
     }
     return (
       <div className="Profile">
-        This component should display the Profile of the selected user
+        Error rendering profile. May be a server problem.
       </div>
     );
   }

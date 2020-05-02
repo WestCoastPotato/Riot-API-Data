@@ -1,3 +1,7 @@
-.home {
+.error, .home {
   margin-top: 20px;
+}
+
+.error {
+  color: red;
 }
