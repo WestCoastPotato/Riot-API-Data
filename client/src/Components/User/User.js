@@ -57,7 +57,7 @@ class User extends Component {
           <button className="button" onClick={this.toSearch}>Search Different User</button>
           <div className="Menu">
             <Link className="menuItem" to={this.state.profileRoute}>Profile</Link>
-            <Link className="menuItem" to={this.state.matchListRoute}>Match List</Link>
+            <Link className="menuItem" to={this.state.matchListRoute}>Recent Match List</Link>
             <Link className="menuItem" to={this.state.currentGameRoute}>Current Game</Link>
           </div>
           <div className="userData">
